@@ -6,8 +6,7 @@ let pending = document.getElementById('pending');
 let completed = document.getElementById('completed');
     //Grab input field
 let inputField = document.getElementById('field');
-
-    
+ 
 //make addButton create a new li in the pending ul
 addButton.addEventListener('click', function(e) {
     e.preventDefault();
@@ -23,13 +22,11 @@ addButton.addEventListener('click', function(e) {
     newCheckbox.classList.add('checkbox');
     newItem.prepend(newCheckbox);
 
-
     //add remove button to new li
     const newButton = document.createElement("button");
     newButton.classList.add('removeButton');
     newButton.innerText = "remove";
     newItem.appendChild(newButton);
-
 
     //remove button
     newButton.addEventListener('click', function(e) {
@@ -40,7 +37,6 @@ addButton.addEventListener('click', function(e) {
             completed.removeChild(newItem);
         }
        
-        
         console.log(e.target);
     })
     //checkbox move item to completed list
@@ -51,9 +47,6 @@ addButton.addEventListener('click', function(e) {
         if (this.checked === false) {
             pending.prepend(newItem)
         }
-
-
-    
     })
     })
  
